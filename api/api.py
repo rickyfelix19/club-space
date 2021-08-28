@@ -1,5 +1,5 @@
 import flask
-from api import gameEngine
+import gameEngine
 from flask_cors import CORS
 
 app = flask.Flask(__name__)
