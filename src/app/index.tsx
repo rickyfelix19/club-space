@@ -27,7 +27,7 @@ export default function App() {
   const [appState, setAppState] = useState<any>(STATE_IDLE);
   const [roomUrl, setRoomUrl] = useState<any>(null);
   const [callObject, setCallObject] = useState<any>(null);
-  const [storeOpen, setStoreOpen] = useState(true);
+  const [storeOpen, setStoreOpen] = useState(false);
   const [apps, setApps] = useState<Application[]>([]);
 
   /**

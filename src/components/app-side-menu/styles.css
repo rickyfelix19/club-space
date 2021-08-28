@@ -1,0 +1,60 @@
+.application-menu {
+  width: 300px;
+  top: 0;
+  left: 72px;
+  height: 100vh;
+  background: #1c1e24;
+  z-index: 5;
+
+  border-left: 1px solid #101115;
+}
+
+.application-menu-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+
+  text-align: left;
+  color: #d4d4d4;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 0 16px;
+
+  border-bottom: 1px solid #00000027;
+}
+
+.application-menu-heading > button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.application-menu-body {
+  padding: 16px;
+  font-size: 14px;
+  color: #d4d4d4;
+  height: inherit;
+  overflow-y: auto;
+}
+
+.application-menu-body > div {
+  margin-bottom: 150px;
+}
+
+.application-menu-body button {
+  display: block;
+  border-radius: 16px;
+  background-color: #f1bb44;
+  padding: 16px;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  align-items: center;
+  border-width: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 32px auto;
+}
