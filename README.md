@@ -6,7 +6,7 @@
 
 </p>
 
-<h3 align="center">club-space</h3>
+<h3 align="center">SYNCS HACK 2021</h3>
 
   
   
@@ -18,15 +18,6 @@
 
 [![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](https://syncs-hack-2021.devpost.com/?ref_feature=challenge&ref_medium=your-open-hackathons&ref_content=Submissions+open)
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
-
-  
   
 
 </div>
@@ -39,7 +30,7 @@
   
   
 
-<p align="center"> **WELCOME TO ClubSpace**
+<p align="center"> **Welcome to ClubSpace**
 
 <br>
 
@@ -63,12 +54,7 @@
 
 - [Technology Stack](#tech_stack)
 
-- [Contributing](../CONTRIBUTING.md)
-
-- [Authors](#authors)
-
-- [Acknowledgments](#acknowledgments)
-
+- [Contributing](#contributors)
   
   
 
@@ -164,31 +150,11 @@ pip install flask
   
   
 
-## ✍️ Authors <a name = "authors"></a>
+## ✍️ Contributors <a name = "contributors"></a>
 
   
-  
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-  
-  
-
-See also the list of [contributors]
-
-
-who participated in this project.
-
-  
-  
-
-## 🎉 Acknowledgments <a name = "acknowledgments"></a>
-
-  
-  
-
-- Hat tip to anyone whose code was used
-
-- Inspiration
-
-- References
+- [@John]()
+- [@Henry]()
+- [@Ben]()
+- [@BowinJH](https://github.com/BowinJH) - Idea & Initial work
