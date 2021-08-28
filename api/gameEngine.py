@@ -6,6 +6,7 @@ import copy
 class BingoGameEngine():
     def __init__(self, callInterval=10, playerNumber=0):
         self.gameStatus = 0
+        self.currNumber = -1
         self.playerNumber = playerNumber
         self.interval = callInterval
         self.boardSize = 5
@@ -41,10 +42,10 @@ class BingoGameEngine():
     def gameInfo(self):
         gameInfo = {}
         gameInfo['status'] = self.gameStatus
-        gameInfo['players'] = self.players.keys()
+        gameInfo['players'] = list(self.players.keys())
         return gameInfo
-
-    def currNumber(self):
+    
+    def currNum(self):
         return self.currNumber
     
     def checkWinning(self, playerId):

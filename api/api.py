@@ -1,19 +1,18 @@
+import flask
 from api import gameEngine
-from flask import Flask
-from gameEngine import BingoGameEngine
 
-app = Flask(__name__)
-game = BingoGameEngine(callInterval=10)
+app = flask.Flask(__name__)
+game = gameEngine.BingoGameEngine(callInterval=10)
 
-@app.route('/join', methods=['POST'])
-def join():
+@app.route('/bingo/join', methods=['POST'])
+def bingoJoin():
     retval = flask.request.get_json()
     roomId = retval["roomid"]
     playerId = game.registerPlayers()
     return {"status": "success",
                 "data": {
                     "uuid": playerId,
-                    "board": gameEngine.players[playerId]['board']
+                    "board": game.players[playerId]['board']
                 },
                 "message": ""
             }
@@ -25,10 +24,10 @@ def bingoUpdate():
     x = retval["x"]
     y = retval["y"]
     newNumebr = retval["newNumebr"]
-    game.updateBoard(x, y, newNumebr)
+    game.updateBoard(playerId, x, y, newNumebr)
     return {"status": "success",
             "data": {
-                "board": gameEngine.players[playerId]['board']
+                "board": game.players[playerId]['board']
             },
             "message": "",
             }
@@ -37,6 +36,7 @@ def bingoUpdate():
 def bingoGameInfo():
     retval = flask.request.get_json()
     playerId = retval["uuid"]
+
     return {"status": "success",
             "data": game.gameInfo(),
             "message": "",
@@ -46,7 +46,7 @@ def bingoGameInfo():
 def bingoCurrNum():
     return {"status": "success",
             "data": {
-                "currNum": game.currNumber()
+                "currNum": game.currNum()
             },
             "message": "",
             }
