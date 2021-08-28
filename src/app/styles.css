@@ -53,6 +53,10 @@
   box-shadow: 11px 11px 0 0 #f1bb45;
 }
 
+.home-section-1 > div:first-of-type {
+  margin-right: 30px;
+}
+
 .home-section-1 button {
   border-radius: 16px;
   background-color: #f1bb44;
@@ -67,4 +71,6 @@
   font-size: 15px;
   font-weight: 700;
   margin-top: 32px;
+
+  display: block;
 }

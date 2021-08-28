@@ -5,6 +5,8 @@ const TYPE_MUTE_MIC = "mute-mic";
 const TYPE_SCREEN = "screen";
 const TYPE_LEAVE = "leave";
 const TYPE_CHAT = "chat";
+const TYPE_STORE = "store";
+const TYPE_CROSS = "cross";
 
 /**
  * Props:
@@ -13,11 +15,38 @@ const TYPE_CHAT = "chat";
  */
 export default function Icon(props: any) {
   function getFillColor() {
-    return props.highlighted ? "#fc6161" : "#6a6b70";
+    return props.highlighted ? "#fc6161" : "#d4d4d4";
   }
 
   function getPath() {
     switch (props.type) {
+      case TYPE_CROSS:
+        return (
+          <g
+            fill="none"
+            stroke={getFillColor()}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </g>
+        );
+      case TYPE_STORE:
+        return (
+          <g
+            fill="none"
+            stroke={getFillColor()}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </g>
+        );
       case TYPE_MUTE_CAMERA:
         return (
           <g
@@ -112,4 +141,11 @@ export default function Icon(props: any) {
   );
 }
 
-export { TYPE_MUTE_CAMERA, TYPE_MUTE_MIC, TYPE_SCREEN, TYPE_LEAVE, TYPE_CHAT };
+export {
+  TYPE_MUTE_CAMERA,
+  TYPE_MUTE_MIC,
+  TYPE_SCREEN,
+  TYPE_LEAVE,
+  TYPE_CHAT,
+  TYPE_STORE,
+};

@@ -13,6 +13,8 @@ import NavBar from "../components/nav-bar";
 
 import screenshot1 from "../assets/screenshot-1.png";
 import SideBar from "../components/side-bar";
+import MarketPlace from "../components/marketplace";
+import { Application } from "../applets";
 
 const STATE_IDLE = "STATE_IDLE";
 const STATE_CREATING = "STATE_CREATING";
@@ -25,6 +27,8 @@ export default function App() {
   const [appState, setAppState] = useState<any>(STATE_IDLE);
   const [roomUrl, setRoomUrl] = useState<any>(null);
   const [callObject, setCallObject] = useState<any>(null);
+  const [storeOpen, setStoreOpen] = useState(true);
+  const [apps, setApps] = useState<Application[]>([]);
 
   /**
    * Creates a new call room.
@@ -215,10 +219,25 @@ export default function App() {
     <div className="app">
       {showCall ? (
         <div className="callWrapper">
+          {storeOpen && (
+            <MarketPlace
+              onClose={() => {
+                setStoreOpen(false);
+              }}
+              applications={apps}
+              onAppsChange={(appList: Application[]) => {
+                setApps(appList);
+              }}
+            />
+          )}
           <CallObjectContext.Provider value={callObject}>
             <SideBar
               disabled={!enableCallButtons}
               onClickLeaveCall={startLeavingCall}
+              onMarketClick={() => {
+                setStoreOpen(true);
+              }}
+              applications={apps}
             />
             <div className="mainCallContent">
               <Call roomUrl={roomUrl} />
