@@ -12,6 +12,7 @@ import "./styles.css";
 import NavBar from "../components/nav-bar";
 
 import screenshot1 from "../assets/screenshot-1.png";
+import SideBar from "../components/side-bar";
 
 const STATE_IDLE = "STATE_IDLE";
 const STATE_CREATING = "STATE_CREATING";
@@ -213,17 +214,18 @@ export default function App() {
   return (
     <div className="app">
       {showCall ? (
-        // NOTE: for an app this size, it's not obvious that using a Context
-        // is the best choice. But for larger apps with deeply-nested components
-        // that want to access call object state and bind event listeners to the
-        // call object, this can be a helpful pattern.
-        <CallObjectContext.Provider value={callObject}>
-          <Call roomUrl={roomUrl} />
-          <Tray
-            disabled={!enableCallButtons}
-            onClickLeaveCall={startLeavingCall}
-          />
-        </CallObjectContext.Provider>
+        <div className="callWrapper">
+          <CallObjectContext.Provider value={callObject}>
+            <SideBar />
+            <div>
+              <Call roomUrl={roomUrl} />
+              <Tray
+                disabled={!enableCallButtons}
+                onClickLeaveCall={startLeavingCall}
+              />
+            </div>
+          </CallObjectContext.Provider>
+        </div>
       ) : (
         <div>
           <NavBar

@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.callWrapper {
+  display: flex;
+}
+
 .section-heading {
   color: #212121;
   font-size: 40px;
