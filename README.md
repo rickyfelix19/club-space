@@ -30,11 +30,9 @@
   
   
 
-<p align="center"> **Welcome to ClubSpace**
+<h1 align="center"> Welcome to ClubSpace
 
-<br>
-
-</p>
+</h1>
 
   
   
@@ -62,7 +60,7 @@
 
   
 
-Serious and boring Conference video calls has been a norm during the Covid-19 period and there shall be a way to make the the experience better by incorporating games.
+Serious and boring Conference video calls has been a norm during the Covid-19 period and there shall be a way to make the the experience better.
 
   
   
@@ -75,7 +73,7 @@ Serious and boring Conference video calls has been a norm during the Covid-19 pe
 
   
 
-We have come up with an application for the SYNCS Hackathon that offers a better way to form communities. Our application provides a virtual environment with users being able to change the theme of video during calls and play games directly from our app where cool animations appears when match ended using gesture recognition, speech recognition, and AR technology.
+We have come up with an application that offers a better way to form communities. Our application provides a virtual environment with users being able to change the theme of video during calls and play games directly from our app where cool animations appears when match ended using gesture recognition, speech recognition, and AR technology.
 
   
   
