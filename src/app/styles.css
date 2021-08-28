@@ -5,6 +5,17 @@
   width: 100%;
 }
 
+.callWrapper {
+  display: flex;
+  background-color: #17181e;
+  max-height: 100vh;
+  height: 100%;
+}
+
+.mainCallContent {
+  width: 100%;
+}
+
 .section-heading {
   color: #212121;
   font-size: 40px;

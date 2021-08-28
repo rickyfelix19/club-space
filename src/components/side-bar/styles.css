@@ -1,0 +1,39 @@
+.side-nav {
+  background-color: #1c1e24;
+  width: 72px;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-square {
+  margin-top: 15px;
+}
+
+.side-nav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-btn {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-btn > * {
+  background-color: #111318;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  margin: 0;
+}
+
+.logout-btn:hover {
+  opacity: 0.8;
+}
