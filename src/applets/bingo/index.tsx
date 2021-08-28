@@ -1,5 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+import "./styles.css";
 import AppSideMenu from "../../components/app-side-menu";
+import axios from "axios";
+import { roomUrlFromPageUrl } from "../../lib/urls";
 
 const available = true;
 const id = "bingo";
@@ -11,12 +17,39 @@ const description =
 interface IProps {
   onClose?: any;
   isOpen?: boolean;
+  onOpen?: any;
 }
+const joinGame = async () => {
+  const userId = await axios.post(
+    "http://139.180.170.57:5000/bingo/join",
+    {
+      roomId: roomUrlFromPageUrl(),
+    },
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  return userId.data;
+};
 
-const Interface = ({ onClose, isOpen }: IProps) => {
+const Interface = ({ onClose, isOpen, onOpen }: IProps) => {
+  const [gameStarted, setGameStarted] = useState(false);
+  const [userId, setUserId] = useState(null);
+
+  const fetchUser = async () => {
+    const id = await joinGame();
+    setUserId(id);
+  };
+
+  useEffect(() => {
+    if (!userId) {
+      fetchUser();
+    }
+  }, []);
+
   return (
     <>
-      {isOpen && (
+      {!gameStarted && isOpen && (
         <AppSideMenu
           title={title}
           onClose={() => {
@@ -40,13 +73,96 @@ const Interface = ({ onClose, isOpen }: IProps) => {
           <button
             onClick={() => {
               onClose && onClose();
+              setGameStarted(true);
             }}
           >
             Start Game
           </button>
         </AppSideMenu>
       )}
+      {gameStarted && (
+        <AppInterface
+          onClose={() => {
+            setGameStarted(false);
+          }}
+          onOpen={() => {
+            onOpen && onOpen();
+          }}
+          isOpen={isOpen}
+        />
+      )}
     </>
+  );
+};
+
+const numbers = [
+  [62, 51, 97, 10, 7],
+  [13, 5, 17, 33, 20],
+  [11, 74, -1, 25, 92],
+  [79, 21, 75, 99, 84],
+  [96, 83, 44, 98, 70],
+];
+
+const AppInterface = ({ onClose, isOpen, onOpen }: any) => {
+  const { transcript, resetTranscript } = useSpeechRecognition();
+  const [matchedIndex, setMatchedIndex] = useState(-1);
+
+  useEffect(() => {
+    SpeechRecognition.startListening({ continuous: true });
+    console.log("Now listening...");
+    return () => {
+      SpeechRecognition.stopListening();
+      console.log("Stopped Listening");
+    };
+  }, []);
+
+  useEffect(() => {
+    if (transcript && transcript.length > 0) {
+      const testWords = transcript.toLowerCase();
+      const matchIndex = testWords.lastIndexOf("bingo");
+      if (matchIndex !== matchedIndex) {
+        console.log("BINGO!!");
+        setMatchedIndex(matchIndex);
+      }
+    }
+  }, [transcript]);
+
+  return (
+    <div
+      className={`bingo-wrapper ${isOpen ? "open-bingo" : "close-bingo"}`}
+      onClick={() => {
+        !isOpen && onOpen && onOpen();
+      }}
+    >
+      <div className="bingo-card">
+        <h3 className="bingo-heading">BINGO</h3>
+        <div className="number-wrapper">
+          {numbers.map((row) => (
+            <div className="number-row">
+              {row.map((number) => (
+                <NumberDisplay number={number} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const NumberDisplay = ({ number }: any) => {
+  const [selected, setSelected] = useState(false);
+  return (
+    <div
+      onClick={() => {
+        setSelected(!selected);
+      }}
+      className={`${number !== -1 ? "" : "free-number"} ${
+        selected ? "number-selected" : ""
+      }`}
+    >
+      {number !== -1 ? number : "FREE"}
+    </div>
   );
 };
 

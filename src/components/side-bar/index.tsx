@@ -70,7 +70,13 @@ const SideBar = ({
         </div>
       </div>
       {applications?.map((app) => (
-        <app.Interface onClose={onAppClose} isOpen={app.id === openApp} />
+        <app.Interface
+          onClose={onAppClose}
+          onOpen={() => {
+            setOpenApp(app.id);
+          }}
+          isOpen={app.id === openApp}
+        />
       ))}
     </>
   );
