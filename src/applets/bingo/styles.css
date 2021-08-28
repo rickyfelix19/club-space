@@ -76,3 +76,68 @@
   font-size: 55px;
   color: #ff254f;
 }
+
+@keyframes example {
+  from {
+    opacity: 0;
+    transform: translateX(100%) rotate(-120deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-300%) rotate(0deg);
+  }
+}
+
+.number-display {
+  display: flex;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 10px solid #f1bb45;
+
+  transform: translateX(100%) rotate(-120deg);
+  animation: example 4s forwards;
+
+  font-weight: 700;
+
+  z-index: 7;
+}
+
+.bingo-load {
+  position: absolute;
+  z-index: 5;
+  bottom: 70px;
+  left: 82px;
+  background-color: #f1ba451c;
+  width: 200px;
+  height: 112.44px;
+  border-radius: 15px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spinner {
+  display: block;
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f1bb453b;
+  border-radius: 50%;
+  border-top-color: #f1bb45;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

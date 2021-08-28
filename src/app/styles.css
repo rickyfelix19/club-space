@@ -38,6 +38,10 @@
   color: #404040;
 }
 
+.section-wrapper-1 {
+  background-color: #fcfbfb;
+}
+
 .home-section-1 {
   display: flex;
   padding: 90px 120px;
@@ -49,11 +53,13 @@
   align-items: center;
 
   background-color: #fcfbfb;
+  max-width: 1075px;
+  margin: auto;
 }
 
 .home-section-1 img {
-  width: 41.6vw;
-  height: 26vw;
+  width: 520px;
+  height: 325px;
   object-fit: cover;
   object-position: center;
   border-radius: 32px;

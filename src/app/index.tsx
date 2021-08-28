@@ -252,26 +252,28 @@ export default function App() {
               createCall().then((url) => startJoiningCall(url));
             }}
           />
-          <div className="home-section-1">
-            <div>
-              <div className="section-heading">
-                A better way to form communities
+          <div className="section-wrapper-1 ">
+            <div className="home-section-1">
+              <div>
+                <div className="section-heading">
+                  A better way to form communities
+                </div>
+                <div className="section-paragraph">
+                  Create your own unique virtual space and bring your events,
+                  game nights and communities to life
+                  <button
+                    disabled={!enableStartButton}
+                    onClick={() => {
+                      createCall().then((url) => startJoiningCall(url));
+                    }}
+                  >
+                    Get started for free
+                  </button>
+                </div>
               </div>
-              <div className="section-paragraph">
-                Create your own unique virtual space and bring your events, game
-                nights and communities to life
-                <button
-                  disabled={!enableStartButton}
-                  onClick={() => {
-                    createCall().then((url) => startJoiningCall(url));
-                  }}
-                >
-                  Get started for free
-                </button>
+              <div>
+                <img src={screenshot1} alt="screenshot" />
               </div>
-            </div>
-            <div>
-              <img src={screenshot1} alt="screenshot" />
             </div>
           </div>
         </div>
