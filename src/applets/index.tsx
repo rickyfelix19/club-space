@@ -1,4 +1,5 @@
 import Bingo from "./bingo";
+import HandTracking from "./hand-tracking";
 
 export type Application = {
   id: string;
@@ -15,6 +16,6 @@ export type Application = {
   }) => JSX.Element;
 };
 
-const allApps: Application[] = [Bingo];
+const allApps: Application[] = [Bingo, HandTracking];
 
 export { allApps };
