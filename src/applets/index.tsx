@@ -11,9 +11,11 @@ export type Application = {
   Interface: ({
     onClose,
     isOpen,
+    onOpen,
   }: {
     onClose: any;
     isOpen?: boolean;
+    onOpen?: any;
   }) => JSX.Element;
 };
 
