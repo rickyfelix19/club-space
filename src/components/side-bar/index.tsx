@@ -15,15 +15,17 @@ const SideBar = ({ onClickLeaveCall, disabled }: IProps) => {
   }
   return (
     <div className="side-nav">
-      <img src={logoSquare} className="square-logo" alt="logo" />
+      <img src={logoSquare} className="logo-square" alt="logo" />
       <div>
-        <TrayButton
-          type={TYPE_LEAVE}
-          disabled={disabled}
-          newButtonGroup={true}
-          highlighted={true}
-          onClick={leaveCall}
-        />
+        <div className="logout-btn">
+          <TrayButton
+            type={TYPE_LEAVE}
+            disabled={disabled}
+            newButtonGroup={true}
+            highlighted={true}
+            onClick={leaveCall}
+          />
+        </div>
       </div>
     </div>
   );
