@@ -37,3 +37,15 @@
 .logout-btn:hover {
   opacity: 0.8;
 }
+
+.side-app-button {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.side-app-button:hover {
+  opacity: 0.8;
+}

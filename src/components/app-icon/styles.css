@@ -1,0 +1,8 @@
+.app-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  object-position: center;
+  background: #fff;
+  border-radius: 10px;
+}

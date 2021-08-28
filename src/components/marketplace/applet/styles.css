@@ -1,0 +1,64 @@
+.applet-wrapper {
+  color: #ffffff;
+  width: 250px !important;
+  padding: 10px;
+  border-radius: 15px;
+  background: #191822;
+}
+
+.applet-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.applet-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  object-position: center;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.applet-description {
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.applet-button-holder {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.install-button {
+  width: 90px;
+  height: 32px;
+  background-color: #02d92b;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.remove-button {
+  width: 90px;
+  height: 32px;
+  background-color: #ff5f5e;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.app-disabled-button {
+  width: 120px;
+  height: 32px;
+  border: 0;
+  font-weight: 700;
+}

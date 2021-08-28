@@ -4,7 +4,7 @@
 }
 
 .large-tiles {
-  height: calc(100% - 132.5px);
+  height: 100%;
   width: 80%;
   position: relative;
   left: 50%;
@@ -19,4 +19,8 @@
   height: 132.5px; /* Video height + 10px padding either side */
   display: flex;
   align-items: center;
+
+  background: transparent;
+  position: absolute;
+  bottom: 0;
 }

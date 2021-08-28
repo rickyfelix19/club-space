@@ -1,0 +1,17 @@
+.side-general-btn {
+  background-color: #16181f;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-general-btn:hover {
+  opacity: 0.8;
+}

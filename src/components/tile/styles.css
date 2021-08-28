@@ -7,6 +7,9 @@
 .tile.large {
   position: relative;
   margin: 2px;
+
+  border-radius: 32px;
+  overflow: hidden;
 }
 
 .tile video {
@@ -31,6 +34,7 @@
 
 .tile.small .background {
   border-radius: 15px;
+  box-shadow: 4px -1px 15px black;
 }
 
 .tile .overlay {
