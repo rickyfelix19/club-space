@@ -1,0 +1,59 @@
+.app {
+  background-color: #fff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.section-heading {
+  color: #212121;
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 700;
+}
+
+.section-paragraph {
+  margin-top: 24px;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #404040;
+}
+
+.home-section-1 {
+  display: flex;
+  padding: 90px 120px;
+
+  flex-direction: row;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-color: #fcfbfb;
+}
+
+.home-section-1 img {
+  width: 41.6vw;
+  height: 26vw;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 32px;
+  box-shadow: 11px 11px 0 0 #f1bb45;
+}
+
+.home-section-1 button {
+  border-radius: 16px;
+  background-color: #f1bb44;
+  padding: 16px;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  align-items: center;
+  border-width: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 32px;
+}

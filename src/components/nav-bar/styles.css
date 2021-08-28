@@ -1,0 +1,49 @@
+.nav-bar {
+  display: flex;
+  margin: 15px 8%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrapper > img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-wrapper > p {
+  padding: 0 8px;
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nav-link-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link-wrapper > a {
+  margin: 0 11px;
+}
+
+.nav-link {
+  line-height: 19.53px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #404040;
+}
+
+.nav-buttons-wrapper {
+  margin-left: 11px;
+}
+
+.nav-buttons-wrapper > button {
+  margin-right: 3px;
+  margin-left: 3px;
+}

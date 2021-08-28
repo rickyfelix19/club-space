@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useCallback } from "react";
 import DailyIframe from "@daily-co/daily-js";
 
-import Call from "../call";
-import StartButton from "../start-button";
-import api from "../../lib/api";
-import Tray from "../tray";
-import CallObjectContext from "../../lib/callContext";
-import { roomUrlFromPageUrl, pageUrlFromRoomUrl } from "../../lib/urls";
-import { logDailyEvent } from "../../lib/logger";
+import Call from "../components/call";
+import api from "../lib/api";
+import Tray from "../components/tray";
+import CallObjectContext from "../lib/callContext";
+import { roomUrlFromPageUrl, pageUrlFromRoomUrl } from "../lib/urls";
+import { logDailyEvent } from "../lib/logger";
 
 import "./styles.css";
+import NavBar from "../components/nav-bar";
+
+import screenshot1 from "../assets/screenshot-1.png";
 
 const STATE_IDLE = "STATE_IDLE";
 const STATE_CREATING = "STATE_CREATING";
@@ -208,7 +210,6 @@ export default function App() {
    * !!!
    */
   const enableStartButton = appState === STATE_IDLE;
-  // TODO: ROOM URL
   return (
     <div className="app">
       {showCall ? (
@@ -224,12 +225,35 @@ export default function App() {
           />
         </CallObjectContext.Provider>
       ) : (
-        <StartButton
-          disabled={!enableStartButton}
-          onClick={() => {
-            createCall().then((url) => startJoiningCall(url));
-          }}
-        />
+        <div>
+          <NavBar
+            onClickStart={() => {
+              createCall().then((url) => startJoiningCall(url));
+            }}
+          />
+          <div className="home-section-1">
+            <div>
+              <div className="section-heading">
+                A better way to form communities
+              </div>
+              <div className="section-paragraph">
+                Create your own unique virtual space and bring your events, game
+                nights and communities to life
+                <button
+                  disabled={!enableStartButton}
+                  onClick={() => {
+                    createCall().then((url) => startJoiningCall(url));
+                  }}
+                >
+                  Get started for free
+                </button>
+              </div>
+            </div>
+            <div>
+              <img src={screenshot1} alt="screenshot" />
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
