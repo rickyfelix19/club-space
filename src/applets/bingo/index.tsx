@@ -5,7 +5,7 @@ import SpeechRecognition, {
 import "./styles.css";
 import AppSideMenu from "../../components/app-side-menu";
 import axios from "axios";
-import { roomUrlFromPageUrl } from "../../lib/urls";
+import { clubCodeFromPageUrl } from "../../lib/urls";
 
 const available = true;
 const id = "bingo";
@@ -20,13 +20,11 @@ interface IProps {
   onOpen?: any;
 }
 const joinGame = async () => {
-  const roomId = roomUrlFromPageUrl();
-  const gameRoomIdSplit = roomId ? roomId.split("/") : "";
   const userId = await axios.post(
     "https://api.clubspace.link/bingo/join",
     {
       // prettier-ignore
-      roomid: gameRoomIdSplit[gameRoomIdSplit.length - 1],
+      roomid: clubCodeFromPageUrl(),
     },
     {
       headers: { "Content-Type": "application/json" },
