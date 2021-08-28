@@ -155,4 +155,4 @@ pip install flask
 - [@John]()
 - [@Henry]()
 - [@Ben]()
-- [@BowinJH](https://github.com/BowinJH) - Idea & Initial work
+- [@BowinJH](https://github.com/BowinJH)
