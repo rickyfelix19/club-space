@@ -1,7 +1,9 @@
 import flask
-from api import gameEngine
+import gameEngine
+from flask_cors import CORS
 
 app = flask.Flask(__name__)
+CORS(app)
 game = gameEngine.BingoGameEngine(callInterval=10)
 
 @app.route('/bingo/join', methods=['POST'])
@@ -83,3 +85,6 @@ def bingoStopGame():
             "data": None,
             "message": "Game Stopped",
             }
+
+if __name__ == "__main__":
+    app.run(host='127.0.0.1')
