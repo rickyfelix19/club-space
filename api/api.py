@@ -75,3 +75,11 @@ def bingoEndGame():
                 "data": None,
                 "message": "Player did not win"
                 }
+
+@app.route('/bingo/stop', methods=['POST'])
+def bingoStopGame():
+    game.endGame()
+    return {"status": "success",
+            "data": None,
+            "message": "Game Stopped",
+            }
