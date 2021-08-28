@@ -13,7 +13,7 @@ const TYPE_CHAT = "chat";
  */
 export default function Icon(props: any) {
   function getFillColor() {
-    return props.highlighted ? "#fb5554" : "#000000";
+    return props.highlighted ? "#fc6161" : "#6a6b70";
   }
 
   function getPath() {

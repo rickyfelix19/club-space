@@ -26,11 +26,11 @@
 }
 
 .tile.small video {
-  border-radius: 4px;
+  border-radius: 15px;
 }
 
 .tile.small .background {
-  border-radius: 4px;
+  border-radius: 15px;
 }
 
 .tile .overlay {

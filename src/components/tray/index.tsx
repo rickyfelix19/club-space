@@ -4,7 +4,6 @@ import TrayButton, {
   TYPE_MUTE_CAMERA,
   TYPE_MUTE_MIC,
   TYPE_SCREEN,
-  TYPE_LEAVE,
   TYPE_CHAT,
 } from "../tray-button";
 import Chat from "../chat";
@@ -60,10 +59,6 @@ export default function Tray(props: any) {
     isSharingScreen
       ? callObject.stopScreenShare()
       : callObject.startScreenShare();
-  }
-
-  function leaveCall() {
-    props.onClickLeaveCall && props.onClickLeaveCall();
   }
 
   function toggleChat() {
@@ -135,13 +130,6 @@ export default function Tray(props: any) {
         onClick={toggleChat}
       />
       <Chat onClickDisplay={displayChat} notification={handleNewChat} />
-      <TrayButton
-        type={TYPE_LEAVE}
-        disabled={props.disabled}
-        newButtonGroup={true}
-        highlighted={true}
-        onClick={leaveCall}
-      />
     </div>
   );
 }

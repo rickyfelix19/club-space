@@ -216,13 +216,13 @@ export default function App() {
       {showCall ? (
         <div className="callWrapper">
           <CallObjectContext.Provider value={callObject}>
-            <SideBar />
-            <div>
+            <SideBar
+              disabled={!enableCallButtons}
+              onClickLeaveCall={startLeavingCall}
+            />
+            <div className="mainCallContent">
               <Call roomUrl={roomUrl} />
-              <Tray
-                disabled={!enableCallButtons}
-                onClickLeaveCall={startLeavingCall}
-              />
+              <Tray disabled={!enableCallButtons} />
             </div>
           </CallObjectContext.Provider>
         </div>
