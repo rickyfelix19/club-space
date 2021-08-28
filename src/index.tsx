@@ -7,6 +7,7 @@ import BrowserUnsupported from "./components/browser-unsupported";
 import "./index.css";
 
 ReactDOM.render(
-  DailyIframe.supportedBrowser().supported ? <App /> : <BrowserUnsupported />,
+  //DailyIframe.supportedBrowser().supported ? <App /> : <BrowserUnsupported />,
+  <App />,
   document.getElementById("root")
 );
