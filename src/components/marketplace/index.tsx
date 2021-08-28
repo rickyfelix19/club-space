@@ -35,16 +35,16 @@ const MarketPlace = ({ onClose, applications, onAppsChange }: IPros) => {
 
   const toggleApp = (app: Application) => {
     const newAppList: Application[] = [];
-    let added = false;
+    let removing = false;
     selectedApps.forEach((a) => {
-      if (getAppIndex(app) === -1) {
+      if (app.id !== a.id) {
         newAppList.push(a);
       } else {
-        added = true;
+        removing = true;
       }
     });
 
-    if (!added) {
+    if (!removing) {
       newAppList.push(app);
     }
 

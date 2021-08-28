@@ -12,6 +12,9 @@ import "./styles.css";
 import NavBar from "../components/nav-bar";
 
 import screenshot1 from "../assets/screenshot-1.png";
+import screenshot2 from "../assets/screenshot-2.png";
+import screenshot3 from "../assets/screenshot-3.png";
+import screenshot4 from "../assets/screenshot-4.png";
 import SideBar from "../components/side-bar";
 import MarketPlace from "../components/marketplace";
 import { Application } from "../applets";
@@ -45,6 +48,7 @@ export default function App() {
       });
   }, []);
 
+  // Code from daily.co tutorial on react custom video layout
   /**
    * Starts joining an existing call.
    *
@@ -256,7 +260,7 @@ export default function App() {
             <div className="home-section-1">
               <div>
                 <div className="section-heading">
-                  A better way to form communities
+                  Welcome to your virtual&nbsp;club space
                 </div>
                 <div className="section-paragraph">
                   Create your own unique virtual space and bring your events,
@@ -273,6 +277,70 @@ export default function App() {
               </div>
               <div>
                 <img src={screenshot1} alt="screenshot" />
+              </div>
+            </div>
+          </div>
+          <div className="section-wrapper-2 ">
+            <div className="home-section-2">
+              <div>
+                <img
+                  src={screenshot2}
+                  alt="screenshot"
+                  className="screenshot-small"
+                />
+              </div>
+              <div>
+                <div className="section-heading-2">Build your club space</div>
+                <div className="section-paragraph-2">
+                  Select from a wide range of experiences to make your space
+                  truly YOURS!
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="section-wrapper-1 ">
+            <div className="home-section-1">
+              <div>
+                <div className="section-heading-2">
+                  Play virtual games across many devices
+                </div>
+                <div className="section-paragraph-2">
+                  Even if you have a tablet or laptop 5 years old, as long as
+                  you have a web cam you can join in virtual experiences with
+                  your friends. Our platform hooks into state of the art
+                  libraries like TensorFlow and Web Speech API to bring new and
+                  personalised experiences to everyone.
+                </div>
+              </div>
+              <div>
+                <img
+                  src={screenshot3}
+                  alt="screenshot"
+                  className="screenshot-small"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="section-wrapper-2 ">
+            <div className="home-section-2">
+              <div>
+                <img
+                  src={screenshot4}
+                  alt="screenshot"
+                  className="screenshot-small"
+                />
+              </div>
+              <div>
+                <div className="section-heading-2">
+                  Create your own experience
+                </div>
+                <div className="section-paragraph-2">
+                  Club space has the tools to enable developers to add their own
+                  experiences to the marketplace. Using JavaScript, developers
+                  can hook into our vast range of features to develop their own
+                  games and experiences. All Club Space experiences go through
+                  an approval process before they can be used by others.
+                </div>
               </div>
             </div>
           </div>
