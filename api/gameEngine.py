@@ -1,7 +1,8 @@
 import random
-import asyncio
+import threading
 import uuid
 import copy
+import time
 
 class BingoGameEngine():
     def __init__(self, callInterval=10, playerNumber=0):
@@ -35,8 +36,8 @@ class BingoGameEngine():
         return
 
     def startGame(self):
-        self.gameStatus = 1
-        self.runGame(self.interval)
+        thread = threading.Thread(target=self.runGame)
+        thread.start()
         return True
 
     def gameInfo(self):
@@ -76,11 +77,11 @@ class BingoGameEngine():
         self.gameStatus = -1
         return
 
-    async def runGame(self, interval):
-        while self.status != -1:
+    def runGame(self):
+        while self.gameStatus != -1:
             self.currNumber = random.randint(1,100)
             self.historyNum.append(self.currNumber)
             self.gameStatus += 1
-            print(f"[Bingo] Turn{self.currNumber}: number is {self.currNumbernumber}, next number will reveal in {interval} second")
-            await asyncio.sleep(interval)
+            print(f"[Bingo] Turn{self.gameStatus}: number is {self.currNumber}, next number will reveal in {self.interval} second")
+            time.sleep(self.interval)
         return

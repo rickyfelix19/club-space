@@ -53,6 +53,7 @@ def bingoCurrNum():
 
 @app.route('/bingo/start', methods=['POST'])
 def bingoStartGame():
+    game.startGame()
     return {"status": "success",
             "data": None,
             "message": "",
