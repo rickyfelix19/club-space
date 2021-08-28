@@ -5,6 +5,7 @@
   "dependencies": {
     "@daily-co/daily-js": "^0.17.0",
     "@tensorflow-models/facemesh": "latest",
+    "@tensorflow-models/handpose": "^0.0.7",
     "@tensorflow/tfjs-backend-wasm": "^2.1.0",
     "@tensorflow/tfjs-backend-webgl": "^2.1.0",
     "@tensorflow/tfjs-converter": "^2.1.0",
