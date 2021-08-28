@@ -6,6 +6,13 @@ export type Application = {
   title: string;
   description: string;
   icon: string;
+  Interface: ({
+    onClose,
+    isOpen,
+  }: {
+    onClose: any;
+    isOpen?: boolean;
+  }) => JSX.Element;
 };
 
 const allApps: Application[] = [Bingo];
