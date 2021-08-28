@@ -1,8 +1,13 @@
 .nav-bar {
   display: flex;
-  margin: 15px 8%;
+  padding: 15px 8%;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 84vw;
+  background: #ffffff;
 }
 
 .logo-wrapper {
