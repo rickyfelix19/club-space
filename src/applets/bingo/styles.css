@@ -108,3 +108,36 @@
 
   z-index: 7;
 }
+
+.bingo-load {
+  position: absolute;
+  z-index: 5;
+  bottom: 70px;
+  left: 82px;
+  background-color: #f1ba451c;
+  width: 200px;
+  height: 112.44px;
+  border-radius: 15px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spinner {
+  display: block;
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f1bb453b;
+  border-radius: 50%;
+  border-top-color: #f1bb45;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

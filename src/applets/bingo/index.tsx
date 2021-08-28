@@ -151,6 +151,7 @@ const Interface = ({ onClose, isOpen, onOpen }: IProps) => {
 const AppInterface = ({ numbers, onClose, isOpen, onOpen }: any) => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [matchedIndex, setMatchedIndex] = useState(-1);
+  const [checkingWin, setCheckingWin] = useState(false);
 
   useEffect(() => {
     SpeechRecognition.startListening({ continuous: true });
@@ -161,6 +162,13 @@ const AppInterface = ({ numbers, onClose, isOpen, onOpen }: any) => {
     };
   }, []);
 
+  const checkCardStatus = async () => {
+    setCheckingWin(true);
+    setTimeout(() => {
+      setCheckingWin(false);
+    }, 4000);
+  };
+
   useEffect(() => {
     if (transcript && transcript.length > 0) {
       const testWords = transcript.toLowerCase();
@@ -168,30 +176,34 @@ const AppInterface = ({ numbers, onClose, isOpen, onOpen }: any) => {
       if (matchIndex !== matchedIndex) {
         console.log("BINGO!!");
         setMatchedIndex(matchIndex);
+        checkCardStatus();
       }
     }
   }, [transcript]);
 
   return (
-    <div
-      className={`bingo-wrapper ${isOpen ? "open-bingo" : "close-bingo"}`}
-      onClick={() => {
-        !isOpen && onOpen && onOpen();
-      }}
-    >
-      <div className="bingo-card">
-        <h3 className="bingo-heading">BINGO</h3>
-        <div className="number-wrapper">
-          {numbers.map((row: number[]) => (
-            <div className="number-row">
-              {row.map((number) => (
-                <NumberDisplay number={number} />
-              ))}
-            </div>
-          ))}
+    <>
+      <div
+        className={`bingo-wrapper ${isOpen ? "open-bingo" : "close-bingo"}`}
+        onClick={() => {
+          !isOpen && onOpen && onOpen();
+        }}
+      >
+        <div className="bingo-card">
+          <h3 className="bingo-heading">BINGO</h3>
+          <div className="number-wrapper">
+            {numbers.map((row: number[]) => (
+              <div className="number-row">
+                {row.map((number) => (
+                  <NumberDisplay number={number} />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      {checkingWin && <LoadingOverlay />}
+    </>
   );
 };
 
@@ -207,6 +219,15 @@ const NumberDisplay = ({ number }: any) => {
       }`}
     >
       {number !== -1 ? number : "FREE"}
+    </div>
+  );
+};
+
+const LoadingOverlay = () => {
+  return (
+    <div className="bingo-load">
+      <div className="spinner" />
+      <p>Checking Bingo</p>
     </div>
   );
 };
