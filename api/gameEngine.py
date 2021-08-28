@@ -1,21 +1,34 @@
 import random
 import asyncio
-
-
+import uuid
 
 class BingoGameEngine():
-    def _init_(self, playerNumber, callInterval, boardSize=5):
+    def __init__(self, callInterval, boardSize=5, playerNumber=0):
         self.gameStatus = 0
         self.playerNumber = playerNumber
         self.interval = callInterval
         self.boardSize = boardSize
         self.players = {}
 
+    def _newBoard(self, boardSize):
+        board = []
+        for i in range (0, boardSize):
+            new = []
+            for j in range (0, boardSize):
+                new.append(random.randint(0, 100))
+            board.append(new)
+        return board
+
     def registerPlayers(self):
-        pass
+        player_id = str(uuid.uuid4())
+        self.players[player_id] = {}
+        self.players[player_id]['board'] = self._newBoard(self.boardSize)
+        self.playerNumber += 1
+        return player_id
     
-    def updateBoard(self, player, newBoard):
-        pass
+    def updateBoard(self, player, x, y, newNumebr):
+        self.players[player]['board'][x][y] = newNumebr
+        return
 
     def startGame(self):
         self.gameStatus = 1
@@ -31,7 +44,7 @@ class BingoGameEngine():
     def currNumber(self):
         return self.currNumber
     
-    def endGame():
+    def endGame(self):
         self.gameStatus = 0
         return
 
