@@ -20,10 +20,13 @@ interface IProps {
   onOpen?: any;
 }
 const joinGame = async () => {
+  const roomId = roomUrlFromPageUrl();
+  const gameRoomIdSplit = roomId ? roomId.split("/") : "";
   const userId = await axios.post(
     "http://139.180.170.57:5000/bingo/join",
     {
-      roomId: roomUrlFromPageUrl(),
+      // prettier-ignore
+      roomid: gameRoomIdSplit[gameRoomIdSplit.length - 1],
     },
     {
       headers: { "Content-Type": "application/json" },
@@ -34,11 +37,13 @@ const joinGame = async () => {
 
 const Interface = ({ onClose, isOpen, onOpen }: IProps) => {
   const [gameStarted, setGameStarted] = useState(false);
-  const [userId, setUserId] = useState(null);
+  const [userId, setUserId] = useState<string>();
+  const [numbers, setNumbers] = useState<number[][]>([]);
 
   const fetchUser = async () => {
-    const id = await joinGame();
-    setUserId(id);
+    const gameData = await joinGame();
+    setUserId(gameData.data.id);
+    setNumbers(gameData.data.board);
   };
 
   useEffect(() => {
@@ -85,6 +90,7 @@ const Interface = ({ onClose, isOpen, onOpen }: IProps) => {
           onClose={() => {
             setGameStarted(false);
           }}
+          numbers={numbers}
           onOpen={() => {
             onOpen && onOpen();
           }}
@@ -95,15 +101,7 @@ const Interface = ({ onClose, isOpen, onOpen }: IProps) => {
   );
 };
 
-const numbers = [
-  [62, 51, 97, 10, 7],
-  [13, 5, 17, 33, 20],
-  [11, 74, -1, 25, 92],
-  [79, 21, 75, 99, 84],
-  [96, 83, 44, 98, 70],
-];
-
-const AppInterface = ({ onClose, isOpen, onOpen }: any) => {
+const AppInterface = ({ numbers, onClose, isOpen, onOpen }: any) => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [matchedIndex, setMatchedIndex] = useState(-1);
 
@@ -137,7 +135,7 @@ const AppInterface = ({ onClose, isOpen, onOpen }: any) => {
       <div className="bingo-card">
         <h3 className="bingo-heading">BINGO</h3>
         <div className="number-wrapper">
-          {numbers.map((row) => (
+          {numbers.map((row: number[]) => (
             <div className="number-row">
               {row.map((number) => (
                 <NumberDisplay number={number} />
