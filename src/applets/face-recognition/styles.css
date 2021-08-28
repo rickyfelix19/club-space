@@ -1,0 +1,90 @@
+.face-wrapper {
+  max-width: 600px;
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
+  background-color: #282631;
+  border-radius: 15px;
+  box-shadow: 5px 4px 7px #00000066;
+  overflow: hidden;
+}
+
+.face-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+
+  text-align: left;
+  color: #d4d4d4;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 0 30px;
+
+  border-bottom: 1px solid #00000027;
+}
+
+.face-heading > button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.face-body {
+  padding: 25px;
+  color: white;
+}
+
+.face-body button {
+  background: white;
+  border: 1px solid black;
+  font-weight: 400;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  border: 1px solid red;
+}
+
+#video {
+  transform: scaleX(-1);
+  visibility: hidden;
+  width: 100vh;
+  height: 100vw;
+}
+
+.canvas-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.canvas-wrapper,
+#scatter-gl-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#scatter-gl-container {
+  border: solid 1px black;
+  position: relative;
+}
+
+/* center the canvas within its wrapper */
+#scatter-gl-container canvas {
+  transform: translate3d(-50%, -50%, 0);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+#main > .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

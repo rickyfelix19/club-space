@@ -23,7 +23,7 @@ const joinGame = async () => {
   const roomId = roomUrlFromPageUrl();
   const gameRoomIdSplit = roomId ? roomId.split("/") : "";
   const userId = await axios.post(
-    "http://139.180.170.57:5000/bingo/join",
+    "https://api.clubspace.link/bingo/join",
     {
       // prettier-ignore
       roomid: gameRoomIdSplit[gameRoomIdSplit.length - 1],
