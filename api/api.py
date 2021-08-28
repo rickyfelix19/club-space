@@ -34,7 +34,7 @@ def bingoUpdate():
             "message": "",
             }
 
-@app.route('/bingo/gameinfo', methods=['GET'])
+@app.route('/bingo/gameinfo', methods=['POST'])
 def bingoGameInfo():
     retval = flask.request.get_json()
     playerId = retval["uuid"]
@@ -44,7 +44,7 @@ def bingoGameInfo():
             "message": "",
             }
 
-@app.route('/bingo/currnumber', methods=['GET'])
+@app.route('/bingo/currnumber', methods=['POST'])
 def bingoCurrNum():
     return {"status": "success",
             "data": {
