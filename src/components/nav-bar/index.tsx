@@ -1,9 +1,13 @@
 import React from "react";
 import "./styles.css";
-import Logo from "../../../assets/logo-black.svg";
+import Logo from "../../assets/logo-black.svg";
 import Button from "../button";
 
-const NavBar = () => (
+interface IProps {
+  onClickStart?: any;
+}
+
+const NavBar = ({ onClickStart }: IProps) => (
   <div className="nav-bar">
     <div className="logo-wrapper">
       <img src={Logo} alt="logo" />
@@ -18,7 +22,13 @@ const NavBar = () => (
       </a>
       <div className="nav-buttons-wrapper">
         <Button alt>Log in</Button>
-        <Button>Start club</Button>
+        <Button
+          onClick={() => {
+            onClickStart && onClickStart();
+          }}
+        >
+          Start club
+        </Button>
       </div>
     </div>
   </div>
