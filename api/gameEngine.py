@@ -57,6 +57,9 @@ class BingoGameEngine():
                 if board[x][y] in self.historyNum:
                     board[x][y] = -1
         
+        for row in board:
+            print(*row)
+
         if board[0][0] == board[1][1] == board[2][2] == board[3][3] == board[4][4] == -1\
             or board[0][4] == board[1][3] == board[2][2] == board[3][1] == board[4][0] == -1\
             or board[0][0] == board[0][1] == board[0][2] == board[0][3] == board[0][4] == -1\
@@ -71,6 +74,7 @@ class BingoGameEngine():
             or board[0][3] == board[1][3] == board[2][3] == board[3][3] == board[4][3] == -1\
             or board[0][4] == board[1][4] == board[2][4] == board[3][4] == board[4][4] == -1:
             win = True
+            self.endGame()
         return win
     
     def endGame(self):
