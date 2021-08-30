@@ -155,6 +155,5 @@ pip install flask
 
   
 
-- [@RickyFelix](https://github.com/rickyfelix19)
 - [@Henry](https://github.com/mangohenry)
 - [@Ben](https://github.com/PseudoRAM/)
