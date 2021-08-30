@@ -152,7 +152,6 @@ pip install flask
 
   
 
-- [@John]()
-- [@Henry]()
-- [@Ben]()
-- [@BowinJH](https://github.com/BowinJH)
+- [@RickyFelix](https://github.com/rickyfelix19)
+- [@Henry](https://github.com/mangohenry)
+- [@Ben](https://github.com/PseudoRAM/)
