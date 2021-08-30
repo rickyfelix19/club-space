@@ -30,12 +30,12 @@
   
   
 
-<h1 align="center"> Welcome to ClubSpace
-  <p>
+<h1 align="center"> Welcome to ClubSpace</h1>
+  <p align="center">
     Due to me being changed to 3 groups, my first time in a Hackathon, and not knowing Flask, React TypeScript, my contribution towards this is extremely minimum
   </p>
 
-</h1>
+
 
   
   
